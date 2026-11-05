@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: #181a20;
+  border: 1px solid #2b313a;
+  border-radius: 10px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #f0b90b;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rank {
+  color: #848e9c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-width: 24px;
+}
+
+.image {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.nameInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: #eaecef;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.symbol {
+  color: #848e9c;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.price {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.positive {
+  color: #0ecb81;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.negative {
+  color: #f6465d;
+  font-size: 0.9rem;
+  font-weight: 600;
+}

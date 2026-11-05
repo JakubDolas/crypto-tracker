@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #848e9c;
+  background-color: #181a20;
+  border-radius: 10px;
+  border: 1px dashed #2b313a;
+  font-size: 1rem;
+}
