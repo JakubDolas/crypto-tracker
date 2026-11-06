@@ -36,7 +36,7 @@ function App() {
     <div className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>
-          Crypto <span>Pulse</span>
+          Crypto <span>Tracker</span>
         </h1>
         <button className={styles.refreshBtn} onClick={refetch}>
           Odśwież kursy

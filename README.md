@@ -1,16 +1,40 @@
-# React + Vite
+# Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tablica do śledzenia kursów kryptowalut w czasie rzeczywistym zintegrowany z publicznym API giełdy Binance.
 
-Currently, two official plugins are available:
+![Podgląd aplikacji](./preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Główne funkcje
 
-## React Compiler
+- **Kursy na żywo z Binance API**: Aktualne ceny, 24-godzinna zmiana procentowa.
+- **Interaktywne wykresy 24h**: Po kliknięciu w dowolną monetę rozwija się wykres cenowy z ostatnich 24 godzin.
+- **Auto-odświeżanie**: Automatyczne pobieranie najświeższych cen w tle co 15 sekund.
+- **Wyszukiwarka na żywo**: Natychmiastowe filtrowanie monet po nazwie lub symbolu (np. BTC, Solana).
+- **Sortowanie**: Możliwość sortowania po rankingu, najwyższej cenie, największych wzrostach oraz spadkach.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Użyte technologie
 
-## Expanding the ESLint configuration
+- **React 19**
+- **Vite**
+- **Recharts**
+- **Binance API**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Uruchomienie
+
+1. Sklonuj repozytorium:
+   ```bash
+   git clone https://github.com/JakubDolas/crypto-tracker.git
+   ```
+2. Wejdź do folderu z projektem:
+   ```bash
+   cd crypto-tracker
+   ```
+3. Zainstaluj zależności:
+   ```bash
+   npm install
+   ```
+4. Uruchom serwer deweloperski:
+   ```bash
+   npm run dev
+   ```
+5. Otwórz w przeglądarce podany w terminalu adres (zwykle `http://localhost:5173`).
