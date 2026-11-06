@@ -1,7 +1,11 @@
+import { useState } from 'react'
+
 import styles from './CryptoCard.module.css'
+import PriceChart from './PriceChart'
 
 function CryptoCard({ coin, rank }) {
     const isPositive = coin.price_change_percentage_24h >= 0
+    const [isExpanded, setIsExpanded] = useState(false)
 
     const formattedPrice = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -11,7 +15,7 @@ function CryptoCard({ coin, rank }) {
     const formattedChange = Math.abs(coin.price_change_percentage_24h).toFixed(2)
 
     return (
-        <div className={styles.card}>
+        <div className={styles.card} onClick={() => setIsExpanded(!isExpanded)}>
             <div className={styles.leftSection}>
                 <span className={styles.rank}>#{rank}</span>
                 <img src={coin.image} alt={coin.name} className={styles.image}/>
@@ -27,6 +31,11 @@ function CryptoCard({ coin, rank }) {
                     {isPositive ? '▲ +' : '▼ -'}{formattedChange}%
                 </span>
             </div>
+
+            {isExpanded && (
+                <PriceChart symbol={coin.id} isPositive={isPositive}/>
+            )}
+
         </div>
     )
 }

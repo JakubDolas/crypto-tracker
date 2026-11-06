@@ -27,7 +27,7 @@ function App() {
       return b.price_change_percentage_24h - a.price_change_percentage_24h
     }
     if (sortBy === 'losers') {
-      a.price_change_percentage_24h - b.price_change_percentage_24h
+      return a.price_change_percentage_24h - b.price_change_percentage_24h
     }
     return 0; //default
   })

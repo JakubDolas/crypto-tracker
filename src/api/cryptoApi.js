@@ -35,3 +35,25 @@ export async function fetchTopCoins(limit = 10) {
     }
   })
 }
+
+export async function fetchCoinHistory(symbol) {
+  const resposne = await fetch(
+    `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=1h&limit=24`
+  )
+  
+  if (!resposne.ok) {
+    throw new Error("Nie udalo sie pobrac historii cen")
+  }
+
+  const rawData = await resposne.json()
+
+  return rawData.map((item) => {
+    const date = new Date(item[0])
+    const timeString = `${date.getHours().toString().padStart(2, '0')}:00`
+
+    return {
+      time: timeString,
+      price: parseFloat(item[4]),
+    }
+  })
+}
