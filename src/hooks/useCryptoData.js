@@ -22,6 +22,12 @@ export function useCryptoData(limit = 10){
 
     useEffect(() => {
         loadData()
+
+        const interval = setInterval(() => {
+            loadData()
+        }, 15000)
+
+        return () => clearInterval(interval)
     }, [limit])
 
     return { data, loading, error, refetch: loadData }
