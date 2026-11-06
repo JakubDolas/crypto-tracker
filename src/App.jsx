@@ -1,9 +1,21 @@
+import { useState } from 'react'
+
 import { useCryptoData } from './hooks/useCryptoData'
 import CryptoList from './components/CryptoList'
+import SearchBar from './components/SearchBar'
+
 import styles from './App.module.css'
 
 function App() {
   const { data, loading, error, refetch } = useCryptoData(10)
+  const [search, setSearch] = useState('')
+
+  const filteredCoins = data.filter((coin) => {
+    const matchesName = coin.name.toLowerCase().includes(search.toLowerCase())
+    const matchesSymbol = coin.symbol.toLowerCase().includes(search.toLowerCase())
+
+    return matchesName || matchesSymbol
+  })
 
   return (
     <div className={styles.container}>
@@ -15,6 +27,11 @@ function App() {
           Odśwież kursy
         </button>
       </header>
+
+      <SearchBar
+        value={search}
+        onChange={setSearch}
+      />
 
       {loading && (
         <div className={styles.loading}>
@@ -29,7 +46,7 @@ function App() {
       )}
 
       {!loading && !error && (
-        <CryptoList coins={data} />
+        <CryptoList coins={filteredCoins} />
       )}
     </div>
   )
