@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.select {
+    padding: 14px 18px;
+    background-color: #181a20;
+    border: 1px solid #2b313a;
+    border-radius: 8px;
+    color: #eaecef;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+
+.select:hover {
+    border-color: #474d57;
+}
+
+.select:focus {
+    border-color: #f0b90b;
+    box-shadow: 0 0 0 1px #f0b90b;
+}
+
+.select option {
+    background-color: #181a20;
+    color: #eaecef;
+    padding: 10px;
+}
+

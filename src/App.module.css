@@ -62,3 +62,10 @@
   border-radius: 8px;
   font-size: 0.95rem;
 }
+
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
